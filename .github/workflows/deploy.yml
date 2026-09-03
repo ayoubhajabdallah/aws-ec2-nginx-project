@@ -1,0 +1,14 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Deploy website
+        run: /home/ec2-user/aws-ec2-nginx-project/deploy.sh
